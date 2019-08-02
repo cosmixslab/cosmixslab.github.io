@@ -1,10 +1,12 @@
 ﻿---
-title: "Welcome"
-author: CosMixs Lab
-date: 2019-8-02
-category: Project
-tags: ["Project"]
-description: 끄으앙
+layout: post
+title:  "CosMixs Lab"
+date:   2019-08-02
+excerpt: "CosMixs Lab"
+project: true
+tag:
+- Kor
+comments: true
 ---
 
 #### CosMixs Lab
