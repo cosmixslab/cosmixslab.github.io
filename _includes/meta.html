@@ -1,23 +1,15 @@
-{% if page.title %}
-{% capture title %}{{ page.title }} | {{ site.title }}{% endcapture %}
-{% else %}
-{% capture title %}{{ site.title }}{% endcapture %}
-{% endif %}
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="{{ site.description }}">
-<meta name="keywords" content="{{ site.keywords | array_to_sentence_string }}">
-<meta name="author" content="{{ title }}">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#3949AB">
-<meta name="google" content="notranslate">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{ title }}">
-<meta name="twitter:description" content="{{ site.description }}">
-<meta name="twitter:image" content="{{ url }}/assets/img/logo.png">
-<meta property="og:type" content="blog">
-<meta property="og:url" content="{{ url }}">
-<meta property="og:title" content="{{ title }}">
-<meta property="og:description" content="{{ site.description }}">
-<meta property="og:image" content="{{ url }}/assets/img/logo.png">
-<title>{{ title }}</title>
+<br>
+<hr>
+<span class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag"><span class="term">{{ tag }}</span></a>{% unless forloop.last %}{% endunless %}{% endfor %}</span>
+<span class="social-share">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" class="tag">
+        <span class="term"><i class="fa fa-facebook-square"></i> Share</span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter" class="tag">
+        <span class="term"><i class="fa fa-twitter-square"></i> Tweet</span>
+    </a>
+    <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" class="tag">
+            <span class="term"><i class="fa fa-google-plus-square"></i> +1</span>
+    </a>
+</span>
+<div style="clear:both"></div>

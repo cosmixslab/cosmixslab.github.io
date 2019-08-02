@@ -1,55 +1,104 @@
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a class="brand-logo logo-font center truncate" href="{{ site.url }}" style="max-width: 50%; max-height: 56px; overflow:hidden;">{{ site.title }}</a>
-      <a class="button-collapse" data-activates="mobile-nav" href="#"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="logo-font" href="{{ site.url }}">Home</a></li>
-        <li><a class="logo-font" href="{{ url }}/about/">About</a></li>
-        <li><a class="logo-font" href="{{ url }}/notis/">Notify</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown-menu" data-beloworigin="true"><span class="logo-font">Blog</span><i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-    </div>
-  </nav>
-</div>
-
-<ul class="dropdown-content" id="dropdown-menu">
-  <li><a class="logo-font waves-effect" href="{{ url }}/blog/">Posts</a></li>
-  <li><a class="logo-font waves-effect" href="{{ url }}/archive/">Archive</a></li>
-  <li><a class="logo-font waves-effect" href="{{ url }}/categories/">Categories</a></li>
-  <li><a class="logo-font waves-effect" href="{{ url }}/tags/">Tags</a></li>
-  <li class="divider"></li>
-  <li><a class="logo-font waves-effect" href="{{ url }}/resources/">Resources</a></li>
-</ul>
-
-<ul class="side-nav" id="mobile-nav">
-  <li>
-    <div class="user-view">
-      <div class="background indigo"></div>
-      <img class="circle materialboxed" data-caption="{{ site.author.name }}" src="https://github.com/{{ site.author.github }}.png">
-      <span class="white-text name">{{ site.author.name }}</span>
-      {% if site.author.email %}
-      <a href="mailto:{{ site.author.email }}"><span class="white-text email">{{ site.author.email }}</span></a>
-      {% endif %}
-    </div>
-  </li>
-  <li><a class="waves-effect" href="{{ site.url }}">Home</a></li>
-  <li><a class="waves-effect" href="{{ url }}/about/">About</a></li>
-  <li><a class="waves-effect" href="{{ url }}/notis/">Notify</a></li>
-  <li class="no-padding">
-    <ul class="collapsible collapsible-accordion" id="nav-blog">
-      <li>
-        <a class="collapsible-header waves-effect">Blog</a>
-        <div class="collapsible-body">
-          <ul>
-            <li><a href="{{ url }}/blog/">Posts</a></li>
-            <li><a href="{{ url }}/archive/">Archive</a></li>
-            <li><a href="{{ url }}/categories/">Categories</a></li>
-            <li><a href="{{ url }}/tags/">Tags</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </li>
-  <li><a class="waves-effect" href="{{ url }}/resources/">Resources</a></li>
-</ul>
+	<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+		<button class="dl-trigger">Open Menu</button>
+		<ul class="dl-menu">
+			<li><a href="{{ site.url }}/">Home</a></li>
+			<li>
+				<a href="#">About</a>
+				<ul class="dl-submenu">
+					<li>
+						<img src="{{ site.url }}/{{ site.logo }}" alt="{{ site.title }} photo" class="author-photo">
+						<h4>{{ site.title }}</h4>
+						<p>{{ site.description }}</p>
+					</li>
+					<li><a href="{{ site.url }}/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+					{% if site.email %}<li>
+                        <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+                    </li>{% endif %}
+                    {% if site.twitter %}<li>
+                        <a href="http://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+                    </li>{% endif %}
+                    {% if site.facebook %}<li>
+                        <a href="http://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+                    </li>{% endif %}
+                    {% if site.google.plus %}<li>
+                        <a href="http://plus.google.com/+{{ site.google.plus }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
+                    </li>{% endif %}
+                    {% if site.linkedin %}<li>
+                        <a href="http://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+                    </li>{% endif %}
+                    {% if site.xing %}<li>
+                        <a href="http://www.xing.com/profile/{{ site.xing }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-xing-square"></i> Xing</a>
+                    </li>{% endif %}
+                    {% if site.instagram %}<li>
+                        <a href="http://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+                    </li>{% endif %}
+                    {% if site.tumblr %}<li>
+                        <a href="http://{{ site.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-tumblr-square"></i> Tumblr</a>
+                    </li>{% endif %}
+                    {% if site.github-url %}<li>
+                        <a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-github"></i> Github</a>
+                    </li>{% endif %}
+                    {% if site.stackoverflow %}<li>
+                        <a href="http://stackoverflow.com/users/{{ site.stackoverflow }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-stack-overflow"></i> StackOverflow</a>
+                    </li>{% endif %}
+                    {% if site.lastfm %}<li>
+                        <a href="http://lastfm.com/user/{{ site.lastfm }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-music"></i> LastFm</a>
+                    </li>{% endif %}
+                    {% if site.dribbble %}<li>
+                        <a href="http://dribbble.com/{{ site.dribbble }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-dribbble"></i> Dribble</a>
+                    </li>{% endif %}
+                    {% if site.pinterest %}<li>
+                        <a href="http://www.pinterest.com/{{ site.pinterest }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+                    </li>{% endif %}
+                    {% if site.foursquare %}<li>
+                        <a href="http://foursquare.com/{{ site.foursquare }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-foursquare"></i> Foursquare</a>
+                    </li>{% endif %}
+                    {% if site.steam %}<li>
+                        <a href="http://steamcommunity.com/id/{{ site.steam }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-steam-square"></i> Steam</a>
+                    </li>{% endif %}
+                    {% if site.youtube %}<li>
+                        <a href="https://youtube.com/user/{{ site.youtube }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-youtube-square"></i> Youtube</a>
+                    </li>{% endif %}
+                    {% if site.youtube-channel %}<li>
+                        <a href="https://youtube.com/channel/{{ site.youtube-channel }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-youtube"></i> Youtube</a>
+                    </li>{% endif %}
+                    {% if site.soundcloud %}<li>
+                        <a href="http://soundcloud.com/{{ site.soundcloud }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-soundcloud"></i> SoundCloud</a>
+                    </li>{% endif %}
+                    {% if site.weibo %}<li>
+                        <a href="http://www.weibo.com/{{ site.weibo }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-weibo"></i> Weibo</a>
+                    </li>{% endif %}
+                    {% if site.flickr %}<li>
+                        <a href="http://www.flickr.com/{{ site.flickr }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-flickr"></i> Flickr</a>
+                    </li>{% endif %}
+                    {% if site.codepen %}<li>
+                        <a href="http://codepen.io/{{ site.codepen }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-codepen"></i> Codepen</a>
+                    </li>{% endif %}
+                    {% if site.keybase %}<li>
+                        <a href="https://keybase.io/{{ site.keybase }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-key"></i> Keybase</a>
+                    </li>{% endif %}
+                    {% if site.xmpp %}<li>
+                        <a href="xmpp:{{ site.xmpp }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-lightbulb-o"></i> XMPP</a>
+                    </li>{% endif %}
+                    {% if site.hackernews %}<li>
+                        <a href="https://news.ycombinator.com/user?id={{ site.hackernews }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-hacker-news"></i> Hacker News</a>
+                    </li>{% endif %}
+				</ul><!-- /.dl-submenu -->
+			</li>
+			<li>
+				<a href="#">Posts</a>
+				<ul class="dl-submenu">
+					<li><a href="{{ site.url }}/posts/">All Posts</a></li>
+					<li><a href="{{ site.url }}/tags/">All Tags</a></li>
+				</ul>
+			</li>
+			{% for link in site.data.navigation %}
+		    {% if link.url contains 'http' %}
+		        {% assign domain = '' %}
+		        {% else %}
+		        {% assign domain = site.url %}
+		    {% endif %}
+		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
+		  {% endfor %}
+		</ul><!-- /.dl-menu -->
+	</nav><!-- /.dl-menuwrapper -->
