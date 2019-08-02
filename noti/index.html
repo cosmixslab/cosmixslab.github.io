@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+{% capture url %}{{ site.url | append: "$" | replace: "/$", "" | replace: "$", "" }}{% endcapture %}
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      {% for noti in paginator.posts %}
+        {% if noti.noti %}
+          {% include noti_card.html %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% if site.author.disqus %}
+<script id="dsq-count-scr" src="//{{ site.author.disqus }}.disqus.com/count.js" async></script>
+{% endif %}

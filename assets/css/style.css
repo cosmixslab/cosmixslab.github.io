@@ -5,7 +5,8 @@
 #post-content h5 { font-size: 16px; }
 #post-content h6 { font-size: 14px; }
 
-.logo-font { font-family: 'Quicksand', sans-serif; }
+.logo-font { font-family: 'Unbuntu', sans-serif; }
+html, body, main { overflow-x: hidden; }
 
 .parallax-container {
   min-height: 380px;
@@ -13,3 +14,7 @@
   height: auto; }
 
 .parallax-container .section { width: 100%; }
+
+#fixed_image_screen {
+  width: 100%;
+  height: auto; }
