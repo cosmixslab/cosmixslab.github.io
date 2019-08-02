@@ -1,13 +1,13 @@
-# Site
+﻿# Site
 title:              Cos Mixs Lab
-bio:                'Cos Mixs Lab'
+bio:                'Cos Mixs Lab의 연구소입니다.'
 description:        "Cos Mixs Lab "
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
-locale:             en_US
+locale:             ko_KR
 url:                https://cosmixslab.github.io/
 
 # Jekyll
